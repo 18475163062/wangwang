@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style>
+		@media screen and (min-width: 1100px) {
+   		/* body {
+        	background-color:lightblue;
+		    }*/
+		    .list-l1{
+				float: left;
+				width: 20%;
+				margin-bottom: 15px;
+				/*background: pink;*/
+			
+			}
+		}
+
+		 @media screen and (min-width: 760px) and (max-width: 1100px){
+			/*body {
+				background-color:pink;
+			}*/
+			.list-l1{
+				float: left;
+				width: 25%;
+				margin-bottom: 15px;
+				/*background: pink;*/
+			}
+			
+		}
+		@media screen and (min-width: 450px) and (max-width: 760px){
+			/*body {
+				background-color:pink;
+			}*/
+			.list-l1{
+				float: left;
+				width: 33%;
+				margin-bottom: 15px;
+				/*background: pink;*/
+			}
+			
+		}
+		@media screen and (min-width: 300px) and (max-width: 450px){
+			/*body {
+				background-color:pink;
+			}*/
+			.list-l1{
+				float: left;
+				width: 50%;
+				margin-bottom: 15px;
+				/*background: pink;*/
+			}
+			
+		}
+
+		@media screen and (max-width: 300px){
+			/*body {
+				background-color:pink;
+			}*/
+			.list-l1{
+				float: left;
+				width: 100%;
+				margin-bottom: 15px;
+				/*background: pink;*/
+			}
+			
+		}
+	
+		.container:after{
+			content:"";
+			clear: both;
+			display:block; 
+		}
+		/*.list-l1{
+			float: left;
+			width: 20%;
+			margin-bottom: 15px;
+			background: pink;
+			
+		}*/
+		
+		.list-l2{
+			/*padding-bottom:62.5%;*/
+			/*position: relative;*/
+			/*text-align: center;*/
+			width: 100%;	
+		}
+		.list-l3:hover{
+			box-shadow:0px 7px 7px rgba(0,0,0,0.5);
+			margin-right:15px;
+			margin-left: 15px;
+			
+		}
+		.list-l3{
+			box-shadow:0px 3px 3px rgba(0,0,0,0.4);
+			margin-right:15px;
+			margin-left: 15px;
+			
+		}
+		.list-l4{
+			padding-bottom:62.5%;
+			position: relative;	
+		}
+		.list-l5{
+			margin-left:25px;
+			/*display:inline-block;*/
+			overflow: hidden;
+			margin:auto 0px auto 15px;
+			white-space: nowrap;
+
+						/*max-width: 100%;*/
+			/*max-height: 100%;*/
+			/*position: absolute;*/
+			/*line-height: 50px;*/
+		}
+		.tu{
+			max-width: 100%;
+			max-height: 100%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			
+		}
+		.daohang{
+			margin:0px;
+			padding:0px;
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		.daohang1{
+			width: 70%;
+			text-align: left;
+			margin-left: 15px;
+		}
+		.daohang li:hover{
+			box-shadow: 1px 3px 3px rgba(0,0,0,.7); 
+			text-align: center;
+			width: 10%;
+			display: inline-block;
+			height: 45px;
+			color: #666;
+			line-height: 50px;
+			background: yellow;
+
+		}
+		.daohang li{
+			box-shadow: 1px 1px 1px rgba(0,0,0,.5); 
+			text-align: center;
+			color: #999;
+			width: 10%;
+			overflow: hidden;
+			display: inline-block;
+			height:45px;
+			line-height: 50px;
+			background: yellow;
+
+		}
+		.sousuo{
+			width: 100%;
+			margin:15px 0px 15px 0px;
+			text-align: center;
+			height: 55px;
+			
+			/*background: red;*/
+		}
+		.sou1{
+			/*position: absolute;
+			top: 0px ;
+			left: 0px;*/
+			margin: auto;
+			margin-left: 45px;
+			width: 80%;
+			/*background: yellow;*/
+			position: relative;
+		}
+		.sou2{
+			border: 1px solid pink;
+			/*background: pink;*/
+			width:50%;
+			height: 32px;
+			
+			padding:4px 0px 4px 4px;
+		}
+		.sou3{
+			/*max-width: 20%;*/
+			min-width:  10%;
+			border: 1px solid pink;
+			text-align: center;
+			line-height: 40px;
+			height:100%;
+			overflow: hidden;
+			position: absolute;
+			left: 80%;
+			top: 50%;
+			background: red;
+			transform: translate(-80%,-50%);
+		}
+	</style>
+	 <script src="./jq/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// var _data ="";
+			$.ajax({
+				url:"http://192.168.1.183:8083/data/list.json",
+				type:"get",
+				dataType:"json",
+				cache:false,
+				
+				data:"",
+				success:function(result){
+						initData(result.data);
+				}
+			})
+		})
+		function initData(data){
+			var list =data.list;
+			var tr_str="";
+			for (var i = 0; i < list.length; i++) {
+				tr_str += '<div class="list-l1">'+
+						'<div class="list-l2">'+
+							'<div class="list-l3">'+
+								'<div class="list-l4"><img src="'+ 'http://192.168.1.183:8083' + list[i].img +'" class="tu"></img></div>'+
+								
+								'<div class="list-l5">'+
+									'<span>'+ list[i].title +'</span><br>'+
+									'<span>'+list[i].time+'</span>'+
+								'</div>'+
+							'</div>'+
+							
+						'</div>'+
+			
+					'</div>';
+				}
+			$("#container").html(tr_str);
+		}
+	</script>
+	<script>
+		function sousuo(){
+			$(".activity-update-boxx").show();
+		$.ajax({
+			type:'get',
+			url:'http://192.168.1.183:8083/data/list.json',
+			data:$("#sou").serialize(),
+			dataType:"json",
+			cache:false,
+			xhrFields: {
+                withCredentials: true
+            },
+            success:function(result){
+            	initDate(result.data)
+            }
+		})
+	}
+	function initDate(data){
+			var listt = data.list;
+			var t_str="";
+			for (var x = 0; x < listt.length; x++) {
+				t_str += '<div class="list-l1">'+
+						'<div class="list-l2">'+
+							'<div class="list-l3">'+
+								'<div class="list-l4"><img src="'+ 'http://192.168.1.183:8083' + listt[x].img +'" class="tu"></img></div>'+
+								
+								'<div class="list-l5">'+
+									'<span>'+ listt[x].title +'</span><br>'+
+									'<span>'+listt[x].time+'</span>'+
+								'</div>'+
+							'</div>'+
+							
+						'</div>'+
+			
+					'</div>';
+			}
+			$("#button").html(t_str);
+		}
+	</script>
+</head>
+<body>
+	<div class="activity-update-boxx" style="background: #fff;  position: fixed; width: 100%; height:100%; margin:0px; padding:0px; z-index: 900; display: none;" >
+				<div id="activity-update-dialog">
+					<div id="subject-update">
+						<input type="button" onclick="$(this).closest('.activity-update-boxx').hide();" value="返回">
+					     <div id="button"></div>
+					</div>
+				</div>
+			</div>
+
+
+	<div class="daohang">
+		<div class="daohang1">
+			<li>logo1</li>
+			<li>logo2</li>
+			<li>logo3</li>
+			<li>logo4</li>
+			<li>logo5</li>
+			<li>logo6</li>
+		</div>
+	</div>
+	<div class="sousuo">
+			<div class="sou1">
+				<form enctype="multipart/form-data" id="sou">
+					<input type="text" class="sou2" name="title" ><a class="sou3" onclick="sousuo()" href="#">搜索</a>
+				</form>
+			</div>
+			
+		</div>
+	<div id="container" class="container" >
+		
+	</div>
+</body>
+</html>

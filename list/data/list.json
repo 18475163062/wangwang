@@ -1,0 +1,47 @@
+{
+	"data":{
+		"list":[ {
+		    
+		    "img":"/img/logo1.jpg",
+		    "title":"logo1",
+		    "time":"2018-2-2"
+  		},
+  		{
+		    
+		    "img":"/img/logo2.jpg",
+		    "title":"logo2",
+		    "time":"2018-2-2"
+  		},
+  		{
+		    
+		    "img":"/img/logo3.jpg",
+		    "title":"logo3",
+		    "time":"2018-2-2"
+  		},
+  		{
+		    
+		    "img":"/img/logo4.jpg",
+		    "title":"logo4",
+		    "time":"2018-2-2"
+  		},
+  		{
+		    
+		    "img":"/img/logo5.jpg",
+		    "title":"logo5",
+		    "time":"2018-2-2"
+  		},
+  		{
+		    
+		    "img":"/img/logo6.jpg",
+		    "title":"logo6",
+		    "time":"2018-2-2"
+  		},
+  		{
+		    
+		    "img":"/img/logo7.jpg",
+		    "title":"logo7",
+		    "time":"2018-2-2"
+  		}
+		]
+	}
+}
